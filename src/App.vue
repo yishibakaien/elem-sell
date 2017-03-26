@@ -31,7 +31,7 @@
     /**
      * created:vue生命周期创建的时候，
      * vue-rescouce 插件，拓展了$http方法，请求网络数据,
-     * 返回一个属性，需要用 .json() 方法转成JSON
+     * 返回一个属性，数据放在body里
      * then 第一个参数，成功回调，第二个参数，失败回调
      */
     created() {
