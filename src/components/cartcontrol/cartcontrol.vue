@@ -28,6 +28,8 @@
         } else {
           this.food.count++;
         }
+        // 为组件注册点击add事件
+        this.$emit('add', $event.target);
       },
       decreaseCart($event) {
         if (!$event._constructed) {
