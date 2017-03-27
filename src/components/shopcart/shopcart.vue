@@ -1,7 +1,7 @@
 <template>
   <div class="shopcart">
     <transition name="fade">
-      <div class="list-mask" v-show="listShow" @click="hideList"></div>
+      <div class="list-mask" v-show="listShow" @click="hideList" @touchmove.stop.prevent="preventDrag"></div>
     </transition>
     <div class="content" @click="toggleList">
       <div class="content-left">
@@ -213,6 +213,10 @@
       },
       hideList() {
         this.fold = true;
+      },
+      preventDrag(event) {
+        event.preventDefault();
+        return false;
       },
       pay() {
         window.alert(`共${this.totalPrice}元，去结算`);
